@@ -1,2 +1,2 @@
 # SnakeGame
-Um simples jogo Snake implementado em C++.
+A simple Snake game implemented in C++.
