@@ -16,7 +16,7 @@ void gotoxy(int x, int y){
 }
 
 //Função para desenhar o mapa do jogo.
-void draw(const int height, const int width, Game snake, Alvo fruit, long int score){
+void draw(const int height, const int width, Game snake, Fruta fruit, long int score){
     for(int i = 0 ; i <= height ; i++){
         for(int j = 0 ; j <= width ; j++){
             bool desenhado = false;
@@ -78,7 +78,7 @@ void movement(){
 }
 
 //Parte lógica do jogo.
-void logic(long int &score, bool &gameOver, bool &definido, Game &snake, Alvo &fruit){
+void logic(long int &score, bool &gameOver, bool &definido, Game &snake, Fruta &fruit){
 
     //Direção e sentido da cobra, de forma contínua.
     if(controle < 0){
@@ -123,4 +123,21 @@ void logic(long int &score, bool &gameOver, bool &definido, Game &snake, Alvo &f
         snake.body.push_front({snake.x, snake.y});
         snake.body.pop_back();
     }
+}
+
+void setWindow(const int windowHeight, const int windowWidth){
+    _COORD c;
+
+    c.X = windowWidth;
+    c.Y = windowHeight;
+
+    _SMALL_RECT r;
+
+    r.Top = r.Left = 0;
+
+    r.Right = (windowWidth - 1);
+    r.Bottom = (windowHeight - 1);
+
+    SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), c);
+    SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), true, &r);
 }

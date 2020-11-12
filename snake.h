@@ -13,10 +13,11 @@ typedef struct{
 typedef struct{
     int x;
     int y;
-}Alvo;
+}Fruta;
 
 void gotoxy(int x, int y);
-void draw(const int height, const int width, Game snake, Alvo fruit, long int score);
+void draw(const int height, const int width, Game snake, Fruta fruit, long int score);
 void movement();
-void logic(long int &score, bool &gameOver, bool &definido, Game &snake, Alvo &fruit);
+void logic(long int &score, bool &gameOver, bool &definido, Game &snake, Fruta &fruit);
+void setWindow(const int windowHeight, const int windowWidth);
 #endif

@@ -9,6 +9,7 @@ g++ main.cpp snake.cpp -o Snake
 .\"Snake.exe"
 */
 int main(void){
+    setWindow(27, 43);
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     system("title Snake++");
@@ -19,7 +20,7 @@ int main(void){
     long int score = 0;
     bool gameOver = false, definido = false;
     Game Snake;
-    Alvo Fruit;
+    Fruta Fruit;
     Snake.x = 21;
     Snake.y = 11;
 
